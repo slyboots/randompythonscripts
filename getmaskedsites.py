@@ -13,7 +13,8 @@ MCP_QUERY_PARAMS= {
 
 def get_mcp_sites():
     return requests.get(
-        "{MCP_API}?{MCP_QUERY}",
+        MCP_API,
+        params=MCP_QUERY_PARAMS,
         auth=requests.auth.HTTPBasicAuth('',MCP_API_KEY)
     )
 
