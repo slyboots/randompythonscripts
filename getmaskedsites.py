@@ -50,6 +50,8 @@ def check_sites():
                 message = message + f"Invalid headers for {domain}: {json.dumps(dict(response.headers))}\n"
         except requests.exceptions.ConnectionError as err:
             pass
+        except requests.exceptions.TooManyRedirects as err:
+            pass
     print("")
     print(message)
 
